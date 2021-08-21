@@ -1,0 +1,9 @@
+﻿.headerH1 {
+    background-color: lavenderblush;
+    font-family: 'Arial Rounded MT';
+    font-size: x-large;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 4px 3px 8px 1px #969696;
+    -webkit-box-shadow: 4px 3px 8px 1px #969696;
+}

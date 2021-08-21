@@ -1,0 +1,16 @@
+﻿
+.commentTable {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.commentTd, .commentTh {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+.commentTr:nth-child(even) {
+    background-color: #dddddd;
+}

@@ -1,0 +1,57 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "AnimalPage";
+}
+@model WebApplication1.Models.Animal
+
+<link href="~/style/AnimalPageStyle/StyleSheet.css" rel="stylesheet" />
+<link href="~/lib/twitter-bootstrap/css/bootstrap.css" rel="stylesheet" />
+<link href="~/style/AnimalPageStyle/StyleSheet1CommentTable.css" rel="stylesheet" />
+<link href="~/style/AnimalPageStyle/ForImageAnimal.css" rel="stylesheet" />
+@{ 
+    ViewBag.secondTitle = Model.Name +" "+ "page";
+    ViewBag.PageDetails = "here is all the details about the Animal";
+}
+
+<div class="table-wrapper">
+    <table class="fl-table">
+        <thead>
+            <tr>
+                <th class="progress-bar-animated">Name</th>
+                <th>Description </th>
+                <th>category </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>@Model.Name</td>
+                <td>@Model.Description</td>
+                <td> @Model.category.Name</td>
+            </tr>
+        <tbody>
+    </table>
+</div>
+<div  id="divForAnimalPImage" >
+    <img id="animalImage" src="@Model.PictureName"/>
+</div>
+
+<h1>Comment Section</h1>
+<form asp-action="AddNewComment">
+    <label>New Comment</label>
+    <input type="text" id="Newcomment" name="Newcomment" />
+    <input type="submit" value="Add My Comment" />
+    <input style=" visibility: hidden;" type="number" id="Animalid" name="Animalid" value="@Model.AnimalId" />
+</form>
+
+<table class="commentTable">
+    <tr class="commentTr">
+        <th class="commentTh">Comments</th>
+    </tr>
+    @foreach (var comments in Model.Comments)
+    {
+        <tr class="commentTr">
+            <td class="commentTd">@comments.CommentString</td>
+        </tr>
+    }
+</table>
+

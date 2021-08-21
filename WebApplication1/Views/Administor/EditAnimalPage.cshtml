@@ -1,0 +1,77 @@
+﻿@model WebApplication1.Models.Animal
+@{
+    //in case it for create new Animal 
+    ViewBag.secondTitle = "Create New animal";
+    ViewBag.PageDetails = "You can edit here Animals!";
+}
+@if (!ViewBag.CreateNew)
+{
+    ViewData["NameVal"] = Model.Name;
+    ViewData["DescriptionVal"] = Model.Description;
+    ViewData["ImageVal"] = Model.PictureName;
+    ViewData["AnimalIdVal"] = Model.AnimalId;
+    //in case it for Edit animal
+    ViewBag.secondTitle = "Edit Animal";
+    ViewBag.PageDetails = "You can edit here Animals!";
+
+}
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+<link href="~/style/EditAnimalPageStyle/StyleSheet.css" rel="stylesheet" />
+
+<div class="input-div">
+    <form method="post" asp-action="EditAnimal">
+        <span class="elert-input" asp-validation-for="Name"></span>
+        <br />
+        <label asp-for="Name"></label>
+        @if (ViewBag.CreateNew)
+        {
+            <input asp-for="Name" />
+        }
+        else
+        {
+            <input value=@ViewData["NameVal"] asp-for="Name" />
+        }
+        <br />
+
+        <span class="elert-input" asp-validation-for="Description"></span>
+        <br />
+        <label asp-for="Description"></label>
+        @if (ViewBag.CreateNew)
+        {
+            <textarea rows="5" cols="60" asp-for="Description">  </textarea>
+        }
+        else
+        {
+            <textarea rows="5" cols="60" value=@ViewData["DescriptionVal"] asp-for="Description">  </textarea>
+        }
+        <br />
+
+        <span class="elert-input" asp-validation-for="PictureName"></span>
+        <br />
+        <label asp-for="PictureName"></label>
+        @if (ViewBag.CreateNew)
+        {
+            <input asp-for="PictureName" class="form-control" />
+        }
+        else
+        {
+            <input value=@ViewData["ImageVal"] asp-for="PictureName" class="form-control" />
+        }
+
+        <label>Category</label>
+        <select asp-for="CategoryId">
+            <option value="1">mammels</option>
+            <option value="2">birds</option>
+            <option value="3">reptiles</option>
+        </select>
+        <input type="submit" value="Save">
+        @if (!ViewBag.CreateNew) //the input value for id in case of edition
+        {
+            <input class="visually-hidden" value=@ViewData["AnimalIdVal"] asp-for="AnimalId" />
+        }
+    </form>
+    @*for making cleint valdatiion*@
+    <script src="~/script/jquery.js"></script>
+    <script src="~/jquery-validate/jquery.validate.js"></script>
+    <script src="~/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+</div>

@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+
+    <link href="~/lib/twitter-bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/lib/twitter-bootstrap/css/bootstrap-grid.css" rel="stylesheet" />
+    <link href="~/lib/twitter-bootstrap/css/bootstrap-reboot.css" rel="stylesheet" />
+    <link href="~/lib/twitter-bootstrap/css/bootstrap-utilities.css" rel="stylesheet" />
+
+    <link href="~/style/LayoutStyle/StyleSheet.css" rel="stylesheet" />
+    <script src="~/script/JavaScript.js"></script>
+
+    <link href="~/style/LayoutStyle/ForImageHeader.css" rel="stylesheet" />
+</head>
+
+
+<body>
+    <header class="header">
+        <h1 class="logo"><a asp-action="index" asp-controller="Home">Erez project</a></h1>
+        <ul class="main-nav">
+            <li><a asp-action="index" asp-controller="Home">Home</a></li>
+            <li><a asp-action="CatalogAction" asp-controller="Catalog">Catalog</a></li>
+            <li><a asp-action="CatalogForAdm" asp-controller="Catalog">Catalog Page Admin</a></li>
+        </ul>
+    </header>
+    <br>
+    <header>
+        <div id="carouselExampleIndicators" class="carousel slide hero-image" data-ride="carousel">
+            <div class="carousel-inner" role="listbox">
+                <div id="ImageHeaderId" class="carousel-item active carousel-item-second imageOfHeader firstImage" 
+                    <div class="carousel-caption d-none d-md-block">
+                        <h2 class="display-4 FirstHeader"> @ViewBag.secondTitle</h2>
+                        <p class="lead SecondHeader">@ViewBag.PageDetails.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <script src="~/script/JavaScriptLayout.js"></script>
+    <main>
+        <div>
+            @RenderBody()
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,16 @@
+﻿#divForAnimalPImage {
+    text-align: center;
+}
+
+#animalImage {
+    border-color: white;
+    height: 300px;
+    width: 500px;
+    border: solid;
+    border-radius: 10px;
+}
+
+    #animalImage:hover {
+        box-shadow: 0 40px 60px -6px black;
+        border-color: white;
+    }

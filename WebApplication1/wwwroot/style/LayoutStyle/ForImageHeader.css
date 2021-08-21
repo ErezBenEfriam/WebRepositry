@@ -1,0 +1,68 @@
+﻿.carousel-item {
+    height: 100vh;
+    min-height: 350px;
+    background: no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.hero-image {
+    /*  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("photographer.jpg");*/
+    background-image: url('https://www.cambridgema.gov/-/media/Images/sharedphotos/departmentphotos/animal.jpg?mw=1920');
+    height: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.carousel-item-second {
+    height: 50px;
+}
+
+.SecondHeader {
+    color: black;
+    font-family: cursive;
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: x-large;
+    text-shadow: 0 0 2px #fff;
+}
+
+.FirstHeader {
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+.imageOfHeader {
+    transition: background-image 1s ease-in-out;
+    background-image: url('https://www.cambridgema.gov/-/media/Images/sharedphotos/departmentphotos/animal.jpg?mw=1920');
+}
+
+.firstImage {
+    background-size: cover;
+    background-image: url('https://www.cambridgema.gov/-/media/Images/sharedphotos/departmentphotos/animal.jpg?mw=1920');
+}
+
+.SecondImage {
+    background-size: cover;
+    background-image: url('https://i.natgeofe.com/n/29712b3c-fce4-4bbc-99fe-de3a01033e38/01_pod-best-animals.jpg');
+}
+
+.ThirdImage {
+    background-size: cover;
+    background-image: url('https://wwf.ca/wp-content/uploads/2020/02/Rectangle-36-1-scaled.jpg');
+}
+
+.ForthImage {
+    background-size: cover;
+    background-image: url('https://tr-images.condecdn.net/image/QMVB3wpapPd/crop/3000');
+}

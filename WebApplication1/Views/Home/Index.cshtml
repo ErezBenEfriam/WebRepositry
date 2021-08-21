@@ -1,0 +1,49 @@
+﻿@{
+    ViewBag.Title = "Index";
+    ViewBag.secondTitle = "Home Page";
+    ViewBag.PageDetails = "The Two animal with most comment in the webstie!";
+
+}
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model List<WebApplication1.Models.Animal>
+
+<link href="~/style/HomeStyle/StyleSheet.css" rel="stylesheet" />
+<link href="~/style/HomeStyle/StyleSheetHeader.css" rel="stylesheet" />
+
+
+@foreach (var animal in Model)
+{
+    <div id="container">
+        <div class="product-details">
+            <h1 class="AnimalName">@animal.Name</h1>
+            <div class="hint-star star">
+                <i class="fa fa-star" aria-hidden="true">Description:</i>
+            </div>
+            <div class="description">" @animal.Description ."</div>
+        </div>
+
+        <div class="product-image">
+            <img src="@animal.PictureName.ToString()" alt="">
+            <div class="info">
+
+                @if (animal.AnimalId == Model.First().AnimalId)
+                {<h2>Most Comment Animal</h2>} 
+                else
+                { <h2>Second Top comment</h2>}
+
+                <ul>
+                    <li>
+                        <strong>Comments: </strong>
+                        @animal.Comments.Count().ToString()
+                    </li>
+                    <li><strong><a asp-action="AnimalPage" asp-route-id="@animal.AnimalId" asp-controller="Catalog">For @animal.Name Page </a></strong></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+}
+
+
+
+
+
